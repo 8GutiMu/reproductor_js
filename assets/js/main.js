@@ -30,9 +30,11 @@ function controles(option){
 
 
   document.getElementById('musica').addEventListener("timeupdate", function(){
-    var curTime = audio.currentTime;
-    var duration = audio.duration;
+    var curTime = document.getElementById('musica').currentTime;
+    var duration = document.getElementById('musica').duration;
 
     var percentaje = (curTime*100)/duration;
-    document.getElementByClass('bar').style.width += (percentaje+"%");
+
+    console.log(percentaje+"%");
+    document.getElementById('bar0').style.width = (percentaje+"%");
   })
