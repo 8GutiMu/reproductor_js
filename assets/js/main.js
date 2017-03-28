@@ -1,27 +1,38 @@
+var audio = document.getElementById("musica");
+
 function controles(option){
   switch (option) {
     case 1: //play
-      document.getElementById('musica').play()
+      audio.play()
       break;
     case 2: //pause
-      document.getElementById('musica').pause()
+      audio.pause()
       break;
     case 3: // + volume
-      document.getElementById('musica').volume+=0.1;
-      console.log(document.getElementById('musica').volume);
+      if (audio.volume <1){
+        audio.volume+=0.1;
+        console.log(audio.volume);
+      }else{
+        alert("VOLUMEN MAXIMOOOOOO!!!")
+      }
       break;
     case 4: //- volume
-      document.getElementById('musica').volume-=0.1
-      console.log(document.getElementById('musica').volume);
-      break;
+    if (audio.volume >= 0.1){
+      audio.volume-=0.1;
+      console.log(audio.volume);
+    }else{
+      alert("VOLUMEN MINIMO!!!")
+    }
     case 5: // stop
-      document.getElementById('musica').load()
+      //audio.load()
+      audio.currentTime =0;
+      controles(2);
       break;
     case 6: // adelantar 5 segundos
-      document.getElementById('musica').currentTime+=5;
+      audio.currentTime+=5;
       break;
     case 7: //retrasar 5 segundos
-      document.getElementById('musica').currentTime-=5;
+      audio.currentTime-=5;
       break;
   }
 
@@ -29,9 +40,9 @@ function controles(option){
 }
 
 
-  document.getElementById('musica').addEventListener("timeupdate", function(){
-    var curTime = document.getElementById('musica').currentTime;
-    var duration = document.getElementById('musica').duration;
+  audio.addEventListener("timeupdate", function(){
+    var curTime = audio.currentTime;
+    var duration = audio.duration;
 
     var percentaje = (curTime*100)/duration;
 
