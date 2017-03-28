@@ -5,18 +5,34 @@
     <title>Reproductor GUTIMU</title>
     <link rel="shorcut icon" type="image/icon" href="assets/img/images.png">
     <script src="assets/js/main.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
   </head>
-  <body>
+  <body >
+
+    <div class="progress">
+      <div class="bar">
+    </div>
+  </div>
+  <section id="todoElcontenido"style="top:60px">
     <audio id="musica" src="assets/musica/OnMyOwn.mp3"></audio>
 
     <div>
-      <button onclick="controles(1)">PLAY</button>
-      <button onclick="controles(2)">PAUSE</button>
-      <button onclick="controles(3)">+</button>
-      <button onclick="controles(4)">-</button>
-      <button onclick="controles(5)">STOP</button>
+
+      <button class="btn" onclick="controles(7)" style="background-image:url(assets/img/atras.png);"></button>
+      <button class="btn" onclick="controles(1)" style="background-image:url(assets/img/play.png);"></button>
+      <button class="btn" onclick="controles(6)" style="background-image:url(assets/img/adelante.png);"></button>
+      <button class="btn" onclick="controles(2)" style="background-image:url(assets/img/pausa.png);"></button>
+      <button class="btn" onclick="controles(5)" style="background-image:url(assets/img/alto.png);"></button>
+      <button class="btn" onclick="controles(3)" style="background-image:url(assets/img/masvolumen.png);"></button>
+      <button class="btn" onclick="controles(4)" style="background-image:url(assets/img/menosvolumen.png);"></button>
+
+
     </div>
 
 
+  </section>
+  <section id="imagenbebe">
+    <img src="assets/img/bg.png">
+  </section>
   </body>
 </html>

@@ -17,10 +17,22 @@ function controles(option){
     case 5: // stop
       document.getElementById('musica').load()
       break;
+    case 6: // adelantar 5 segundos
+      document.getElementById('musica').currentTime+=5;
+      break;
+    case 7: //retrasar 5 segundos
+      document.getElementById('musica').currentTime-=5;
+      break;
   }
 
 
 }
 
 
-console.log(document.getElementById('musica').duration);
+  document.getElementById('musica').addEventListener("timeupdate", function(){
+    var curTime = audio.currentTime;
+    var duration = audio.duration;
+
+    var percentaje = (curTime*100)/duration;
+    document.getElementByClass('bar').style.width += (percentaje+"%");
+  })
